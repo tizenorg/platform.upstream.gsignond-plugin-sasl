@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="gsignond-plugin-sasl Reference Manual" link="index.html" author="" name="gsignond-plugin-sasl" version="2" language="c">
+  <chapters>
+    <sub name="Plugin reference" link="ch01.html">
+      <sub name="GSignondSaslPlugin" link="GSignondSaslPlugin.html"/>
+    </sub>
+    <sub name="Object Hierarchy" link="object-tree.html"/>
+    <sub name="API Index" link="api-index-full.html"/>
+    <sub name="Index of deprecated API" link="deprecated-api-index.html"/>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="struct GSignondSaslPlugin" link="GSignondSaslPlugin.html#GSignondSaslPlugin-struct"/>
+    <keyword type="struct" name="struct GSignondSaslPluginClass" link="GSignondSaslPlugin.html#GSignondSaslPluginClass"/>
+  </functions>
+</book>
