@@ -1,30 +1,31 @@
-Name: gsignond-plugin-sasl
-Summary: SASL plugin for GLib based Single Sign-On
+Name:    gsignond-plugin-sasl
+Summary: SASL plugin for GLib
 Version: 1.0.0
-Release: 1
-Group: Security/Accounts
+Release: 0
+Group:   Security/Accounts
 License: LGPL-2.1+
-Source: %{name}-%{version}.tar.gz
+Source:  %{name}-%{version}.tar.gz
 Source1: %{name}.manifest
-URL: https://01.org/gsso
-Requires(post): /sbin/ldconfig
+URL:     https://01.org/gsso
+
+Requires(post):   /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
+BuildRequires: pkgconfig
 BuildRequires: pkgconfig(glib-2.0) >= 2.30
 BuildRequires: pkgconfig(gsignond) >= 1.0.0
 BuildRequires: pkgconfig(libgsasl)
 
-
 %description
-%{summary}.
+SASL plugin for GLib based on Single Sign-On.
 
 
 %package doc
-Summary:    Documentation files for %{name}
+Summary:    Documentation for %{name}
 Group:      Development/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description doc
-%{summary}.
+Documentation files for %{name}.
 
 
 %prep
@@ -33,8 +34,8 @@ cp %{SOURCE1} .
 
 
 %build
-%configure 
-make %{?_smp_mflags}
+%reconfigure
+%__make %{?_smp_mflags}
 
 
 %install
@@ -43,19 +44,15 @@ rm -rf %{buildroot}
 
 
 %post -p /sbin/ldconfig
-
-
 %postun -p /sbin/ldconfig
 
 
 %files
 %defattr(-,root,root,-)
 %manifest %{name}.manifest
-%doc AUTHORS COPYING.LIB INSTALL NEWS README
+%license COPYING.LIB
 %{_libdir}/gsignond/gplugins/libsasl*.so
-
 
 %files doc
 %defattr(-,root,root,-)
 %{_datadir}/gtk-doc/html/%{name}/*
-
